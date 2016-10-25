@@ -1,0 +1,43 @@
+<template format="4"
+    revision="1"
+    name="Kotlin MVP Activity"
+    description="Creates all the related MVP code along with the activity">
+
+  <category value="Other"/>
+
+  <parameter
+      id="generateLayout"
+      name="Generate Layout File"
+      type="boolean"
+      default="true"
+      help="If true, a layout file will be generated" />
+
+  <parameter id="className"
+      name="Functionality Name"
+      type="string"
+      constraints="class|unique|nonempty"
+      default="MvpFunction"
+      help="The new MVP activity context/name"/>
+
+  <parameter
+      id="packageName"
+      name="Package name"
+      type="string"
+      constraints="package"
+      default="com.mycompany.myapp"/>
+
+  <parameter
+      id="layoutName"
+      name="Layout Name"
+      type="string"
+      constraints="layout|unique|nonempty"
+      suggest="${activityToLayout(className)}"
+      default="activity_main"
+      visibility="generateLayout"
+      help="The name of the layout to create for the activity" />
+
+
+  <globals file="globals.xml.ftl" />
+  <execute file="recipe.xml.ftl" />
+
+</template>
