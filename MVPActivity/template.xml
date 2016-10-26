@@ -14,7 +14,7 @@
 
   <parameter
       name="Generate MVP Base Classes"
-      default="true"
+      default="false"
       help="If true, the base mvp classes will also be generated"
       id="generateBaseClasses"
       type="boolean" />
