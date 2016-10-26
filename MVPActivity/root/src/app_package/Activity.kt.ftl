@@ -12,6 +12,9 @@ class ${className}Activity : AppCompatActivity(), ${className}View {
 
   override fun onCreate(savedInstanceState: Bundle?) {
     super.onCreate(savedInstanceState)
+    <#if generateLayout>
+    setContentView(R.layout.${layoutName})
+    </#if>
     scope = Toothpick.openScopes(application, this)
     scope.installModules(SmoothieActivityModule(this), ${className}Module())
   }

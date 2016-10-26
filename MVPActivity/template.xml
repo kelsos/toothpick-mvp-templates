@@ -1,40 +1,55 @@
-<template format="4"
-    revision="1"
-    name="Kotlin MVP Activity"
-    description="Creates all the related MVP code along with the activity">
+<template name="Kotlin MVP Activity"
+    description="Creates all the related MVP code along with the activity"
+    format="4"
+    revision="1">
 
-  <category value="Other"/>
+  <category value="Other" />
 
   <parameter
-      id="generateLayout"
       name="Generate Layout File"
-      type="boolean"
       default="true"
-      help="If true, a layout file will be generated" />
+      help="If true, a layout file will be generated"
+      id="generateLayout"
+      type="boolean" />
 
-  <parameter id="className"
-      name="Functionality Name"
-      type="string"
+  <parameter
+      name="Generate MVP Base Classes"
+      default="true"
+      help="If true, the base mvp classes will also be generated"
+      id="generateBaseClasses"
+      type="boolean" />
+
+  <parameter name="Functionality Name"
       constraints="class|unique|nonempty"
       default="MvpFunction"
-      help="The new MVP activity context/name"/>
+      help="The new MVP activity context/name"
+      id="className"
+      type="string" />
 
   <parameter
-      id="packageName"
       name="Package name"
-      type="string"
       constraints="package"
-      default="com.mycompany.myapp"/>
+      default="com.mycompany.myapp"
+      id="packageName"
+      type="string" />
 
   <parameter
-      id="layoutName"
       name="Layout Name"
-      type="string"
       constraints="layout|unique|nonempty"
-      suggest="${activityToLayout(className)}"
       default="activity_main"
-      visibility="generateLayout"
-      help="The name of the layout to create for the activity" />
+      help="The name of the layout to create for the activity"
+      id="layoutName"
+      suggest="${activityToLayout(className)}"
+      type="string"
+      visibility="generateLayout" />
+
+  <parameter
+      name="Hierarchical Parent"
+      constraints="activity|exists|empty"
+      default=""
+      help="The hierarchical parent activity, used to provide a default implementation for the 'Up' button"
+      id="parentActivityClass"
+      type="string" />
 
 
   <globals file="globals.xml.ftl" />

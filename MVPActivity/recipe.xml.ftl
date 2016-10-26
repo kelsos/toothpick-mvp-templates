@@ -5,12 +5,16 @@
 
 <#if generateLayout>
   <#include "../MVPCommon/recipe_layout.xml.ftl" />
-    <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml"/>
+  <open file="${escapeXmlAttribute(resOut)}/layout/${layoutName}.xml" />
+</#if>
+
+<#if generateBaseClasses>
+  <#include "../MVPCommon/recipe_mvp_base.xml.ftl" />
 </#if>
 
 
-    <instantiate from="src/app_package/Activity.kt.ftl"
-                 to="${escapeXmlAttribute(srcOut)}/${className}Activity.kt"/>
+  <instantiate from="src/app_package/Activity.kt.ftl"
+      to="${escapeXmlAttribute(srcOut?replace('java', 'kotlin'))}/${className}Activity.kt" />
 
-    <open file="${srcOut}/${className}PresenterImpl.kt"/>
+  <open file="${srcOut}/${className}PresenterImpl.kt" />
 </recipe>

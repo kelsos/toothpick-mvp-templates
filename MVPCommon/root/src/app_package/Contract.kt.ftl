@@ -1,7 +1,6 @@
-package ${packageName};
+package ${packageName}
 
-import com.kelsos.mbrc.views.BaseView
-
+import ${packageName}.mvp.BaseView
 
 interface ${className}View : BaseView {
 

@@ -1,10 +1,7 @@
-package ${packageName};
+package ${packageName}
 
-import javax.inject.Inject
+interface Presenter<in T : BaseView> {
+  fun attach(view: T)
 
-class ${className}PresenterImpl
-@Inject constructor() :
-  BasePresenter<${className}View>(),
-  ${className}Presenter {
-
+  fun detach()
 }
