@@ -2,7 +2,7 @@
 
     <instantiate from="root/src/app_package/Contract.kt.ftl"
                  to="${escapeXmlAttribute(srcOut?replace('java', 'kotlin'))}/${className}Contract.kt"/>
-    <instantiate from="root/src/app_package/Presenter.kt.ftl"
+    <instantiate from="root/src/app_package/PresenterImpl.kt.ftl"
                  to="${escapeXmlAttribute(srcOut?replace('java', 'kotlin'))}/${className}PresenterImpl.kt"/>
     <instantiate from="root/src/app_package/Module.kt.ftl"
                  to="${escapeXmlAttribute(srcOut?replace('java', 'kotlin'))}/${className}Module.kt"/>
