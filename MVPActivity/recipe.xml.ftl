@@ -14,7 +14,7 @@
 
 
   <instantiate from="src/app_package/Activity.kt.ftl"
-      to="${escapeXmlAttribute(srcOut?replace('java', 'kotlin'))}/${className}Activity.kt" />
+      to="${escapeXmlAttribute(srcOut)}/${className}Activity.kt" />
 
   <open file="${srcOut}/${className}PresenterImpl.kt" />
 </recipe>

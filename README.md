@@ -7,6 +7,8 @@ Main differences is that the templates generate kotlin files and also Toothpick 
 
 Mostly this is intended for personal use since it is really boring to do this by hand.
 
+The templates should be extracted to the ```android-studio\plugins\android\lib\templates\other``` directory
+
 LICENCE
 ------
     The MIT License
